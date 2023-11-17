@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>text-utils</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <div class="w-6/12 h-3/4 bg-grey-50 mx-auto mt-10 text-black border-4">
+            <form action= "/analyze" method="get">
+                {% comment %} {%csrf_token %} {% endcomment %}
+                <textarea name="text" placeholder="write text here" class="h-[50vh] w-full">
+                    {% comment %} {{analyzed}} {% endcomment %}
+                </textarea></br></br>
+                <label class="text-black font-sans text-xl p-5">upper case</label><input type="checkbox" name="touppercase">    
+                <label class="text-black font-sans text-xl p-5">lower case</label><input type="checkbox" name="tolowercase">
+                <label class="text-black font-sans text-xl p-5">Remove Punc</label><input type="checkbox" name="removepunc">
+                <label class="text-black font-sans text-xl p-5">Remove newlines</label><input type="checkbox" name="remonewlines"><br><br>
+                <input type="submit" value="analyse" class="font-black border-2 p-4 mx-auto block w-50 cursor-pointer">
+            </form>
+        </div>
+    </body>
+</html>
